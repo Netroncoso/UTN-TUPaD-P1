@@ -134,5 +134,13 @@ termina con vocal, añadir un signo de exclamación al final e imprimir el strin
 pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por 
 pantalla.'''
 
+def UltimaVocal():
+    Palabra = str(input("Ingrese una palabra o frase: "))
+    UltimaLetra = Palabra[-1].lower()
+    if UltimaLetra in ['a', 'e', 'i', 'o', 'u']:
+        print(f"{Palabra}!")
+    else:
+        print(f"{Palabra}")
 
+UltomaVocal()
 
