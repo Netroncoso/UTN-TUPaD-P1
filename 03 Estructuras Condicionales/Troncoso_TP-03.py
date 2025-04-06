@@ -101,3 +101,38 @@ import random
 numeros_aleatorios = [random.randint(1, 100) for i in range(50)] 
 Nota: el bloque de código anterior crea una lista con 50 números entre 1 y 100 elegidos de 
 forma aleatoria.'''
+
+import random
+from statistics import mean, median, mode
+
+''' Generar la lista de 50 números aleatorios entre 1 y 100 '''
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+
+''' Calcular media, mediana y moda '''
+media = mean(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+moda = mode(numeros_aleatorios)
+
+''' Mostrar valores calculados '''
+print(f"Números aleatorios: {numeros_aleatorios}")
+print(f"Media: {media}")
+print(f"Mediana: {mediana}")
+print(f"Moda: {moda}")
+
+''' Analizar sesgo '''
+if media > mediana > moda:
+    print("Sesgo positivo (a la derecha)")
+elif media < mediana < moda:
+    print("Sesgo negativo (a la izquierda)")
+elif media == mediana == moda:
+    print("Distribución sin sesgo")
+else:
+    print("No se puede determinar un sesgo claro con estos valores")
+
+'''7) Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado 
+termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por 
+pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por 
+pantalla.'''
+
+
+
