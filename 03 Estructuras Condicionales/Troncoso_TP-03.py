@@ -142,5 +142,91 @@ def UltimaVocal():
     else:
         print(f"{Palabra}")
 
-UltomaVocal()
+UltimaVocal()
+
+'''8) Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3 
+dependiendo de la opción que desee: 
+1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO. 
+2. Si quiere su nombre en minúsculas. Por ejemplo: pedro. 
+3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro. 
+El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el 
+usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(), 
+lower() y title() de Python para convertir entre mayúsculas y minúsculas. '''
+
+def Mayus_Minusculas():
+    Nombre=str(input("Ingrese su Nombre: "))
+    Opcion=int(input("1. Si quiere su nombre en mayúsculas.\n2. Si quiere su nombre en minúsculas.\n3. Si quiere su nombre con la primera letra mayúscula. \n Ingrese Opcion: " ))
+    if Opcion==1:
+        Nombre=Nombre.upper()
+    elif Opcion==2:
+        Nombre=Nombre.lower()
+    elif Opcion==3:
+        Nombre=Nombre.title()
+    else: print("Opcion Invalida")
+    print(Nombre)
+
+Mayus_Minusculas()
+
+'''9) Escribir un programa que pida al usuario la magnitud de un terremoto, clasifique la 
+magnitud en una de las siguientes categorías según la escala de Richter e imprima el resultado 
+por pantalla: 
+● Menor que 3: "Muy leve" (imperceptible). 
+● Mayor o igual que 3  y menor que 4: "Leve" (ligeramente perceptible). 
+● Mayor o igual que 4  y menor que 5: "Moderado" (sentido por personas, pero 
+generalmente no causa daños). 
+● Mayor o igual que 5  y menor que 6: "Fuerte" (puede causar daños en estructuras 
+débiles). 
+● Mayor o igual que 6  y menor que 7: "Muy Fuerte" (puede causar daños significativos). 
+● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala). '''
+def Categorizar_Sismo():
+    magnitud = float(input("Ingrese la magnitud del sismo según la escala de Richter: "))
+
+    if magnitud < 3:
+        print("Muy leve (imperceptible)")
+    elif magnitud >= 3 and magnitud < 4:
+        print("Leve (ligeramente perceptible)")
+    elif magnitud >= 4 and magnitud < 5:
+        print("Moderado (sentido por personas, pero generalmente no causa daños)")
+    elif magnitud >= 5 and magnitud < 6:
+        print("Fuerte (puede causar daños en estructuras débiles)")
+    elif magnitud >= 6 and magnitud < 7:
+        print("Muy Fuerte (puede causar daños significativos)")
+    else:
+        print("Extremo (puede causar graves daños a gran escala)")
+
+Categorizar_Sismo()
+
+'''Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes 
+del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla 
+si el usuario se encuentra en otoño, invierno, primavera o verano. '''
+
+def Estacion_Segun_Fecha():
+    hemisferio = input("¿En qué hemisferio estás? (N/S): ").upper()
+    mes = int(input("¿Qué mes es? (1-12): "))
+    dia = int(input("¿Qué día es? (1-31): "))
+
+    if mes == 12 and dia >= 21 or mes in [1, 2] or (mes == 3 and dia <= 20):
+        estacion_norte = "Invierno"
+        estacion_sur = "Verano"
+    elif mes == 3 and dia >= 21 or mes in [4, 5] or (mes == 6 and dia <= 20):
+        estacion_norte = "Primavera"
+        estacion_sur = "Otoño"
+    elif mes == 6 and dia >= 21 or mes in [7, 8] or (mes == 9 and dia <= 20):
+        estacion_norte = "Verano"
+        estacion_sur = "Invierno"
+    elif mes == 9 and dia >= 21 or mes in [10, 11] or (mes == 12 and dia <= 20):
+        estacion_norte = "Otoño"
+        estacion_sur = "Primavera"
+    else:
+        print("Fecha inválida.")
+        return
+
+    if hemisferio == "N":
+        print(f"Estás en el hemisferio norte. La estación es {estacion_norte}.")
+    elif hemisferio == "S":
+        print(f"Estás en el hemisferio sur. La estación es {estacion_sur}.")
+    else:
+        print("Hemisferio no válido. Por favor, escribí N o S.")
+
+Estacion_Segun_Fecha()
 
